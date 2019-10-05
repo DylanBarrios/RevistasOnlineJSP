@@ -1,0 +1,14 @@
+SMAP
+interfazLector_jsp.java
+JSP
+*S JSP
+*F
++ 0 interfazLector.jsp
+interfazLector.jsp
++ 1 Lector.html
+html/Lector.html
+*L
+5,11:49
+1#1,123:60
+15#0,4:183
+*E
