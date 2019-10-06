@@ -5,7 +5,6 @@
  */
 package Alien.usuarios;
 
-import Alien.usuarios.consultasUsuarios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -47,8 +46,15 @@ public class InicioSesion extends HttpServlet {
         
         //Se compara si existe el usuario y que rol desempeña
         consultasUsuarios co = new consultasUsuarios();
-            response.sendRedirect("interfazLector.jsp");
         
+        if(co.autenticacion(usuario, clave) && "Lector".equals(co.getRol(usuario)))
+            response.sendRedirect("interfazLector.jsp");
+        else if(co.autenticacion(usuario, clave) && "Administrador".equals(co.getRol(usuario)))
+             response.sendRedirect("interfazAdministrador.jsp");
+        else if(co.autenticacion(usuario, clave) && "Editor".equals(co.getRol(usuario)))
+             response.sendRedirect("interfazEditor.jsp");
+        
+            
     }
 
 }
