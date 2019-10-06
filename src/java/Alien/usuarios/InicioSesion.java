@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,7 +33,6 @@ public class InicioSesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         
-        
     }
 
     @Override
@@ -44,6 +44,9 @@ public class InicioSesion extends HttpServlet {
         usuario = request.getParameter("usuario");
         clave = request.getParameter("clave");
         
+        HttpSession nuevaSesion = request.getSession();
+        nuevaSesion.setAttribute("usuarioSession", usuario);
+   
         //Se compara si existe el usuario y que rol desempeña
         consultasUsuarios co = new consultasUsuarios();
         

@@ -54,6 +54,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>Mundo Alien</title>\n");
+      out.write("        ");
+
+            session.setAttribute("usuario", request.getParameter("usuario"));
+        
+      out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("         ");
@@ -64,13 +69,15 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>TODO supply a title</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
+      out.write("        \n");
       out.write("    </head>\n");
       out.write("    <body class=\"bg-warning\">\n");
       out.write("        <h1>Bienvenido al mundo Alien</h1>\n");
+      out.write("        \n");
       out.write("        <form action=\"iniciar\" method=\"post\">\n");
       out.write("            <div class=\"container col-lg-6 \">\n");
       out.write("                <label>Usuario:</label>\n");
-      out.write("                <input type=\"text\" name=\"usuario\" placeholder=\"Ingresa tu usuario\">\n");
+      out.write("                <input type=\"text\" id=\"usuario\" name=\"usuario\" placeholder=\"Ingresa tu usuario\">\n");
       out.write("            </div>\n");
       out.write("            <div class=\"container col-lg-6\">\n");
       out.write("                <label>Clave:</label>\n");
@@ -79,7 +86,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"container col-lg-6\">\n");
       out.write("                <button class=\"btn btn-primary\">Sumergirse</button>\n");
       out.write("                <br>\n");
-      out.write("                <a href=\"crearUsuario.html\">Registrate como nuevo alien</a>\n");
+      out.write("                <a href=\"usuarioNuevo.jsp\">Registrate como nuevo alien</a>\n");
       out.write("            </div>\n");
       out.write("        </form>\n");
       out.write("    </body>\n");

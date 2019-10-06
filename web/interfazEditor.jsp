@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,5 +14,7 @@
     </head>
     <body>
         <%@include  file= "editor.html"%>
+        <h6 class="text-success font-weight-bold font-italic">Alien <%out.print(session.getAttribute("usuarioSession")); %> </h6>
+        <a href="controladorSalir">Cerrar Sesion</a>
     </body>
 </html>

@@ -10,9 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Mundo Alien</title>
-        <%
-            session.setAttribute("usuario", request.getParameter("usuario"));
-        %>
+        
     </head>
     <body>
          <%@include file="login.html"%>

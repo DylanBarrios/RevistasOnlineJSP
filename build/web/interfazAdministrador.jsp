@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello Administrador!</h1>
+         <h6 class="text-success font-weight-bold font-italic">Alien <%out.print(session.getAttribute("usuarioSession")); %> </h6>
+         <a href="controladorSalir">Cerrar Sesion</a>
     </body>
 </html>
