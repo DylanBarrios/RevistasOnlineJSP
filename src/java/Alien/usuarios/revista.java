@@ -12,6 +12,7 @@ import javax.servlet.http.Part;
  * @author jara
  */
 public class revista {
+    private int idRevista;
     private String autor;
     private String nombreRevista;
     private String descripcion;
@@ -20,6 +21,7 @@ public class revista {
     private float cuotaSuscripcion;
     private String FechaCreacion;
     private InputStream pdf;
+    private boolean autorizacion;
     Part part = null;
     
     
@@ -34,6 +36,11 @@ public class revista {
         part = request.getPart("pdf");
         pdf= part.getInputStream();
     
+    }
+    
+    
+
+    public revista() {
     }
 
     public String getAutor() {
@@ -100,5 +107,23 @@ public class revista {
         this.pdf = pdf;
     }
 
+    public int getIdRevista() {
+        return idRevista;
+    }
+
+    public void setIdRevista(int idRevista) {
+        this.idRevista = idRevista;
+    }
+
+    public boolean getAutorizacion() {
+        return autorizacion;
+    }
+
+    public void setAutorizacion(boolean autorizacion) {
+        this.autorizacion = autorizacion;
+    }
+
+    
     
 }
+
